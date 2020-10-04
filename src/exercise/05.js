@@ -5,8 +5,12 @@ import React from 'react';
 import '../box-styles.css';
 
 function Box({size, style, children}) {
+  const sizeClassName = size ? `box--${size}` : '';
   return (
-    <div className={`box box--${size}`} style={{fontStyle: 'italic', ...style}}>
+    <div
+      className={`box ${sizeClassName}`}
+      style={{fontStyle: 'italic', ...style}}
+    >
       {children}
     </div>
   );
